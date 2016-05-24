@@ -1,0 +1,12 @@
+name 'gse'
+maintainer 'Arkadiusz Buras'
+maintainer_email 'macbury@gmail.com'
+license 'all_rights'
+description 'Installs/Configures gse'
+long_description 'Installs/Configures gse'
+version '0.1.0'
+
+depends 'apt'
+depends 'build-essential'
+depends 'ruby_build'
+depends 'nginx'
