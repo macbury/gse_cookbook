@@ -1,17 +1,22 @@
-include_recipe 'build-essential::default'
-include_recipe 'ruby_build'
+include_recipe 'build-essential'
 
-package 'libssl-dev'
-package 'libreadline-dev'
-package 'zlib1g-dev'
-package 'libssl-dev'
-package 'openssl'
+ruby_version = node['gse']['ruby']
 
-ruby_build_ruby node['gse']['ruby'] do
-  prefix_path '/usr/local/'
-  action :install
+apt_repository 'ruby-ng' do
+  uri 'ppa:brightbox/ruby-ng'
+  distribution 'trusty'
+  components ['main']
 end
 
+package 'libxslt-dev'
+package 'libxml2-dev'
+package 'build-essential'
+package 'libpq-dev'
+package 'libsqlite3-dev'
+package 'software-properties-common'
+
+package "ruby#{ruby_version}"
+package "ruby#{ruby_version}-dev"
 gem_package 'bundler' do
   options '--no-ri --no-rdoc'
 end

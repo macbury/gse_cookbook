@@ -8,5 +8,7 @@ version '0.1.0'
 
 depends 'apt'
 depends 'build-essential'
-depends 'ruby_build'
 depends 'nginx'
+depends 'application_ruby'
+depends 'nginx_conf'
+depends 'postgresql_lwrp', '~> 1.1.15'
