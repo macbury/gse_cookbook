@@ -1,9 +1,17 @@
 postgresql_version      = node['gse']['db']['version']
 postgresql_cluster_name = node['gse']['db']['cluster']
 
+apt_repository 'pgdg' do
+  uri 'http://apt.postgresql.org/pub/repos/apt/'
+  components ['main']
+  distribution 'trusty-pgdg'
+  key 'https://www.postgresql.org/media/keys/ACCC4CF8.asc'
+  action :add
+  deb_src true
+end
+
 postgresql postgresql_cluster_name do
   cluster_version postgresql_version
-  cluster_create_options( locale: 'pl_PL.UTF-8' )
 end
 
 databases = data_bag('gse_db')
@@ -22,4 +30,5 @@ databases.each do |database_name|
     in_cluster postgresql_cluster_name
     owner database['user']
   end
+
 end

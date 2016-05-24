@@ -6,7 +6,7 @@ node.default['gse'] = {
   group: 'gse',
   env: 'development',
   db: {
-    version: '9.5',
+    version: '9.3',
     cluster: 'gse-main'
   }
 }
