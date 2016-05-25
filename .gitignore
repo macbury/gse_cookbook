@@ -14,3 +14,4 @@ bin/*
 
 .kitchen/
 .kitchen.local.yml
+data_bags/gse_git_keys/*.json

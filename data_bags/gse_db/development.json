@@ -1,5 +1,6 @@
 {
   "id": "gse_development",
   "user": "gse_development",
-  "password": "new_password_here"
+  "password": "new_password_here",
+  "env": "development"
 }
