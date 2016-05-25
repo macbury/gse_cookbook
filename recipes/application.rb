@@ -62,6 +62,7 @@ shared_directory = File.join(user_home, 'shared')
 
 git app_directory do
   repository node['gse']['repo']
+  revision 'master'
   user node['gse']['user']
   group node['gse']['group']
 end
