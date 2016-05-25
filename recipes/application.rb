@@ -81,7 +81,8 @@ database_config = data_bag('gse_db').inject({}) do |config, database_name|
     'database' => database_name,
     'username' => database['user'],
     'password' => database['password'],
-    'encoding' => 'utf8'
+    'encoding' => 'utf8',
+    'host' => 'localhost'
   }
 
   config
