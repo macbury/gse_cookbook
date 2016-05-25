@@ -4,7 +4,7 @@ maintainer_email 'macbury@gmail.com'
 license 'all_rights'
 description 'Installs/Configures gse'
 long_description 'Installs/Configures gse'
-version '0.4.9'
+version '0.4.10'
 
 depends 'apt'
 depends 'build-essential'

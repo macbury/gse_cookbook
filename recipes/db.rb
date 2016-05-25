@@ -10,15 +10,16 @@ postgres_connection = {
 data_bag('gse_db').each do |database_name|
   database = data_bag_item('gse_db', database_name)
 
-  postgresql_database database_name do
-    connection(postgres_connection)
-    action :create
-  end
-
-  postgresql_database_user database['user']do
+  postgresql_database_user database['user'] do
     connection(postgres_connection)
     password   database['password']
     action     :create
+  end
+
+  postgresql_database database_name do
+    connection(postgres_connection)
+    action :create
+    owner database['user']
   end
 
   postgresql_database_user database['user'] do
