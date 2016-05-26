@@ -18,6 +18,13 @@ directory user_home do
   group node['gse']['group']
 end
 
+lxmx_oh_my_zsh_user node['gse']['user'] do
+  plugins        %w{git ruby}
+  autocorrect    false
+  case_sensitive true
+  theme 'robbyrussell'
+end
+
 rsa_key       = search(:gse_git_keys, "id:#{rails_env}").first
 temp_key_path = '/tmp/id_rsa'
 
