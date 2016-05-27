@@ -1,12 +1,12 @@
 package 'git'
-
+package 'zsh'
 rails_env = node['gse']['env']
 
 group node['gse']['group']
 
 user node['gse']['user'] do
   gid node['gse']['group']
-  shell '/bin/bash'
+  shell '/usr/bin/zsh'
   system true
   supports manage_home: true
 end
